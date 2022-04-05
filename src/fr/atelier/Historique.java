@@ -421,6 +421,27 @@ public class Historique {
 	}
 	
 	}
+	
+	=========================================================================================
+		Scanner sc = new Scanner(System.in);
+	String tab[] = new String[] {"Pierre", "Papier", "Ciseaux"};
+	int x = (int) (Math.random() * 3);
+	System.out.println("Pierre, papier, ciseaux");
+	System.out.println("1 -Pierre");
+	System.out.println("2 -Papier");
+	System.out.println("3- Ciseaux");
+	int reponse = -1;
+	reponse = sc.nextInt();
+	if(reponse == (x +1) ) {
+		System.out.println("La machine a joué " + tab[x]);
+		System.out.println("Egalité");
+	}else if(((x + 1) == 1 && reponse == 2)|| ((x + 1) == 3 && reponse == 1 ) || ((x + 1) == 2 && reponse == 3)) {
+		System.out.println("La machine a joué " + tab[x]);
+		System.out.println("Gagné");
+	}else {
+		System.out.println("La machine a joué " + tab[x]);
+		System.out.println("Perdu");
+	}
 		
 	*/
 	
