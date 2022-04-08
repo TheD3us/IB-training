@@ -3,7 +3,7 @@ package fr.atelier;
 import java.util.Scanner;
 
 public class BlackJack {
-	
+	// Déclaration des variables
 	public static void blackJack() {
 		Scanner sc = new Scanner(System.in);
 		int cartes[] = new int[52];
@@ -20,6 +20,10 @@ public class BlackJack {
 		boolean joueurAPerdu = false;
 		boolean partieFinie = false;
 		boolean estUnAs = false;
+		
+		// Initialisation de la partie
+		// On effectue un tirage de 2 cartes entre le croupier et le joueur
+		// A chaque tirage on vérifie si il y'a un as
 		
 		System.out.println("Bienvenue au casino, vous êtes à la table de BlackJack");
 		creationCartes(cartes);
@@ -39,6 +43,8 @@ public class BlackJack {
 		compteurTirees++;
 		compteurJoueur++;
 		}
+		// On effectue un affichage de la situation et on vérifie si un des deux a perdu 
+		
 		System.out.println("Le croupier a tiré : " + croupier[0] + " et une carte face cachée");
 		System.out.println("Vous avez tiré : " + joueur[0] + " et " + joueur[1]); 
 		scoreCroupier = croupier[0] + croupier[1];
@@ -47,6 +53,9 @@ public class BlackJack {
 		System.out.println("Vous avez au total " + scoreJoueur);
 		joueurAPerdu = aPerdu(scoreJoueur);
 		partieFinie = verifApresTirage(partieFinie,croupierAPerdu,joueurAPerdu);
+		
+		// On demande au joueur si il veux repiocher
+		
 		System.out.println("Désirez vous une carte supplémentaire ? true/false");
 		
 		decision = sc.nextBoolean();
@@ -68,6 +77,8 @@ public class BlackJack {
 			decision = sc.nextBoolean();
 				}
 			}
+		
+		// Le croupier vérifie son score et pioche au besoin
 		
 		while(scoreCroupier < 17 && croupierAPerdu == false && partieFinie == false) {
 			tirage(cartes,tirees,compteurTirees,croupier,compteurCroupier);
