@@ -793,7 +793,34 @@ public class Main {
 
 
 ==========================================================================================
+	Scanner sc = new Scanner(System.in);
+		System.out.println("Choisissez un chiffre");
+		int choix = sc.nextInt();
+		int compteur = 2;
+		int tabDepart[] = {0,1,0};
+		int calcul = 0;
+		int tab[] = new int[choix +choix];
+		int tab2[] = new int[choix +choix];	
 
+		for(int i = 0; i < 3; i++) {
+			tab[i] = tabDepart[i];
+		}
+		System.out.println(" " + tab[1]);
+		for(int i = 0; i < choix; i++) {
+			compteur ++;
+
+			for(int j = 0; j < compteur -1 ; j++) {
+
+				calcul = tab[j] + tab[j+1];
+				tab2[j+1]= calcul;
+				System.out.print(" " + calcul + " ");				
+			}
+			for(int j = 0; j < compteur ; j++) {
+				tab[j]= tab2[j];
+			}
+			System.out.println("");
+			
+		}
 		
 		
 	*/
