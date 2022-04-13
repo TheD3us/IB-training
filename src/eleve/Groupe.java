@@ -27,7 +27,7 @@ public class Groupe {
 		boolean entre = false;
 		int compteur = 0;
 		while(compteur < eleves.length && entre == false ) {
-			if(eleves[compteur].equals(null)) {
+			if(eleves[compteur] == null) {
 				eleves[compteur]= eleve;
 				eleves[compteur].setGroupe(this);
 				entre = true;
@@ -42,9 +42,11 @@ public class Groupe {
 		boolean supprime = false;
 		int compteur = 0;
 		while(compteur < eleves.length && supprime == false ) {
-			if(eleves[compteur].equals(eleve)) {
+			if(eleves[compteur] != null && eleves[compteur].equals(eleve)) {
+				
+				eleves[compteur].setGroupe(null);
 				eleves[compteur]= null;
-				eleves[compteur].setGroupe(this);
+				
 				supprime = true;
 			}
 			compteur++;

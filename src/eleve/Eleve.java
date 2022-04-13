@@ -7,10 +7,9 @@ public class Eleve {
 	private Groupe groupe;
 	private boolean coupable;
 	
-	public Eleve(String nom, String prenom, Groupe groupe, boolean coupable) {
+	public Eleve(String nom, String prenom,  boolean coupable) {
 		this.nom = nom;
 		this.prenom = prenom;
-		this.groupe = groupe;
 		this.coupable = coupable;
 	}
 	
